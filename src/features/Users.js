@@ -12,11 +12,12 @@ export const userSlice = createSlice({
             state.value = state.value.filter((user) => user.id !== action.payload.id);
         },
         updateUsername: (state, action) => {
+            // eslint-disable-next-line array-callback-return
             state.value.map((user) => {
                 if (user.id === action.payload.id) {
                     user.username = action.payload.username;
-                }
-            })
+                };
+            });
         }
     }
 })
